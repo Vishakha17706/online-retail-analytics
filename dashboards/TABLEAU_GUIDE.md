@@ -1,9 +1,8 @@
-# Tableau Public build guide — "E-Commerce Customer & Revenue Analytics"
+# Tableau Public build guide, "E-Commerce Customer & Revenue Analytics"
 
 **Goal:** one interactive Tableau Public dashboard a commercial team could steer the
-business with — revenue trend, country mix, returns, RFM segments, and cohort retention.
-**Time:** ~90 min. **Cost:** free. Every dataset is pre-aggregated in `dashboards/extracts/`
-— no pivoting needed (or connect raw `../data/online_retail_clean.csv` to show the wrangling).
+business with, revenue trend, country mix, returns, RFM segments, and cohort retention.
+**Time:** ~90 min. **Cost:** free. Every dataset is pre-aggregated in `dashboards/extracts/`, no pivoting needed (or connect raw `../data/online_retail_clean.csv` to show the wrangling).
 **Source:** UCI Online Retail II (real UK online-retail transactions, 2009–2011).
 
 ## 0. Setup
@@ -25,10 +24,10 @@ Download **Tableau Public** (free), create an account, **Connect → Text file**
 `3.6% return rate` (type as text or build from the extracts).
 
 ## 2. Dashboard
-- New Dashboard 1200×900. Title: **E-Commerce Customer & Revenue Analytics — UCI Online Retail II**.
+- New Dashboard 1200×900. Title: **E-Commerce Customer & Revenue Analytics, UCI Online Retail II**.
 - Top: KPI tiles. Left column: A + B + C (the revenue story). Right column: E + F + G (customers).
   Bottom strip: D (returns).
-- Footer text: *"Real public data — UCI Online Retail II (Chen, 2019). Fully reproducible from fetch_data.py → clean_data.py."*
+- Footer text: *"Real public data, UCI Online Retail II (Chen, 2019). Fully reproducible from fetch_data.py → clean_data.py."*
 - Teal accent (#0f766e), hide gridlines, tooltips on.
 
 ## 3. Publish + wire back
