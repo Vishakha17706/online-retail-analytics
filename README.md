@@ -106,7 +106,7 @@ are kept in `online_retail_returns.csv` for the returns analysis. `revenue = qua
 - Revenue **peaks every November** (£1.43M Nov-2010, £1.45M Nov-2011) on the pre-Christmas run-up, roughly double a quiet spring month. Top SKU: *Regency Cakestand 3 Tier* (£330K).
 
 **A small core of customers carries the business** *(RFM segmentation)*
-- **Champions: 25.2% of customers but 69.2% of revenue.** With **Loyal Customers (20.6% / 14.2%)**, two segments hold ~83% of revenue.
+- **Champions: 24.9% of customers but 68.8% of revenue.** With **Loyal Customers (20.6% / 14.2%)**, two segments hold ~83% of revenue.
 - **At Risk** customers are 14.1% of customers but **9.3% of revenue**, high-value and slipping away (a win-back target).
 - Pareto confirms it: **top 10 customers = 16.1%**, **top 100 = 37.6%** of identified-customer revenue; **~23% of customers generate 80% of revenue**.
 
