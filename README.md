@@ -1,3 +1,55 @@
+## My Project Contribution — Vishakha Sirwani
+
+This project is adapted from [ndkn-code/online-retail-analytics](https://github.com/ndkn-code/online-retail-analytics). Credit for the original code and project structure belongs to the original author.
+
+### Project Overview
+Retail transaction analysis using SQL, Python and Tableau to explore sales trends, returns, customer segments, retention and revenue concentration.
+
+Dataset: UCI Online Retail II, covering December 2009 to December 2011.
+
+### My Contributions
+- Ran the Python data cleaning and analysis pipeline.
+- Executed all five SQL analysis files using SQLite through Python.
+- Resolved inconsistent segmentation results by updating Python to reuse the SQL scoring logic.
+- Verified that segmentation results matched across SQL, Python and dashboard exports.
+- Built and published a Tableau dashboard containing seven charts.
+
+### Live Dashboard
+[View E-Commerce Customer & Revenue Analytics](https://public.tableau.com/app/profile/vishakha.sirwani/viz/E-CommerceCustomerRevenueAnalytics_/RetailAnalyticsDashboard)
+
+### Tools Used
+- SQL / SQLite: aggregation, CTEs, joins and window functions.
+- Python: pandas, Matplotlib and sqlite3.
+- Tableau Public: charts and dashboard.
+- GitHub: project documentation and version history.
+
+### Verified Findings
+- Raw dataset: 1,067,371 transaction rows.
+- Cleaned sales dataset: 1,003,340 transaction lines.
+- Total sales revenue before returns: £19,643,861.62.
+- Identified customers: 5,852.
+- United Kingdom: 85.53% of total sales revenue.
+- Return value: £716,425.97, equivalent to 3.65% of sales revenue.
+- Champions: 1,460 customers, representing 24.9% of identified customers and 68.8% of identified-customer sales revenue.
+- Top 100 customers: 37.6% of identified-customer sales revenue.
+- December 2009 cohort: 333 of 951 customers purchased again in January 2010, a 35.0% monthly repeat-purchase rate.
+
+### Business Recommendations
+- Prioritize retention efforts for high-value customer segments.
+- Investigate unusually large cancellations before drawing conclusions about product quality.
+- Monitor dependence on the UK market and high-spending customers.
+
+These are recommendations based on analysis, not measured business improvements.
+
+### Limitations
+- December 2011 includes transactions only through December 9; it is not comparable to a complete month.
+- 22.6% of cleaned sales lines have no customer ID. They are included in total sales revenue but excluded from customer analysis.
+- Sales revenue excludes cancellations; returns are analyzed separately.
+- Cohorts use the first purchase observed in this dataset, which may not be a customer's first-ever purchase.
+- Customer segments describe behaviour at the historical dataset snapshot, not current customer activity.
+
+---
+
 # E-Commerce Customer & Revenue Analytics
 
 A SQL + Python + Tableau study of **real UK online-retail transactions**: *where does
