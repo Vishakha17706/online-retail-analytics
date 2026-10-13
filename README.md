@@ -17,6 +17,9 @@ Dataset: UCI Online Retail II, covering December 2009 to December 2011.
 ### Live Dashboard
 [View E-Commerce Customer & Revenue Analytics](https://public.tableau.com/app/profile/vishakha.sirwani/viz/E-CommerceCustomerRevenueAnalytics_/RetailAnalyticsDashboard)
 
+### Dashboard Preview
+![Retail Analytics Dashboard](dashboards/dashboard_preview.png)
+
 ### Tools Used
 - SQL / SQLite: aggregation, CTEs, joins and window functions.
 - Python: pandas, Matplotlib and sqlite3.
