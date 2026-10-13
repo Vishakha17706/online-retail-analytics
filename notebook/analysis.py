@@ -228,15 +228,25 @@ print(f"return rate by VOLUME: {rate_vol:.2f}%  ({ret_units:,.0f} of {sales['qua
 # %%
 cust = sales.dropna(subset=["customer_id"]).copy()
 cust["customer_id"] = cust["customer_id"].astype(int)
-snapshot = cust["invoice_date"].max() + pd.Timedelta(days=1)
-rfm = cust.groupby("customer_id").agg(
-    recency=("invoice_date", lambda x: (snapshot - x.max()).days),
-    frequency=("invoice", "nunique"),
-    monetary=("revenue", "sum")).reset_index()
-rfm["R"] = pd.qcut(rfm["recency"], 5, labels=[5, 4, 3, 2, 1]).astype(int)
-rfm["F"] = pd.qcut(rfm["frequency"].rank(method="first"), 5, labels=[1, 2, 3, 4, 5]).astype(int)
-rfm["M"] = pd.qcut(rfm["monetary"].rank(method="first"), 5, labels=[1, 2, 3, 4, 5]).astype(int)
+import sqlite3
+from pathlib import Path
 
+project_root = Path(__file__).resolve().parents[1]
+sql_text = (project_root / "sql/03_rfm_segmentation.sql").read_text(
+    encoding="utf-8"
+)
+rfm_query = sql_text.rsplit("\nSELECT", 1)[0] + """
+SELECT customer_id, recency_days AS recency,
+       frequency, monetary,
+       r_score AS R, f_score AS F, m_score AS M
+FROM segmented
+"""
+
+with sqlite3.connect(
+    f"file:{project_root / 'data/online_retail.db'}?mode=ro",
+    uri=True
+) as con:
+    rfm = pd.read_sql_query(rfm_query, con)
 
 def segment(row):
     R, F = row["R"], row["F"]
